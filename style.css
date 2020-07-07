@@ -1,0 +1,239 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #d2d8db;
+}
+button{
+    outline: none;
+}
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 100px;
+    z-index: 10000;
+    transition: 0.6s;
+}
+header .logo{
+    position: relative;
+    font-weight: 700;
+    color: #313743;
+    text-decoration: none;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.6s;
+}
+.logo #strt{
+    font-size: 2em;
+    color: #313743;
+    font-weight: 400;
+}
+.logo:before{
+    content: url('artist-profile1.png'); 
+}
+header .toogle{
+    position: relative;
+    top: 55px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+header .toogle:before{
+    content: '';
+    position: absolute;
+    top: 6px;
+    width: 100%;
+    height: 3px;
+    background:  #313743;
+}
+header .toogle:after{
+    content: '';
+    position: absolute;
+    bottom: 6px;
+    width: 100%;
+    height: 3px;
+    background:  #313743;
+}
+.screen.on header .toogle:before{
+    top: 50%;
+    width: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.screen.on header .toogle:after{
+    top: 50%;
+    width: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.texts{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    transition: 0.6s;
+}
+.screen.on .texts {
+    left: 80%;
+}
+.texts h1{
+    text-align: center;
+    font-weight: 300;
+    font-size: 2.5em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #fff;
+    transition: 0.6s;
+}
+.screen.on .texts h1{
+    font-size: 2em;
+}
+.texts button{
+    margin: 20px;
+    font-size: 1.5em;
+    color: #fff;
+    background: none;
+    border: none;
+    border-radius: 20px;
+    width: 300px;
+    height: 50px;
+    box-shadow: 0 0 30px #fafafa;
+    cursor: pointer;
+    transition: 0.1s;
+}
+.texts button a{
+    text-decoration: none;
+    font-size: 30px;
+   
+}
+.texts button:hover{
+    box-shadow: inset 0 0 80px #fafafa;
+    color: #313743;
+    transition: 0.1s;
+}
+.screen{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    padding: 100px;
+    background: url('body.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 50px #000;
+    transition: 0.6s;
+    z-index: 2;
+    overflow: hidden;
+}
+.screen.on{
+    transform: translateX(-400px);
+}
+#navigation{
+    position: fixed;
+    top: 0;
+    right: -200px;
+    width: 400px;
+    height: 100vh;
+    background: #313743;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: 0.6s;
+}
+#navigation.on{
+    right: 0;
+}
+.logo1{
+    font-weight: 700;
+    color: #fafafa;
+    text-decoration: none;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 20px;
+    transition: 0.5s;
+}
+.logo1 #strt1{
+    font-size: 2em;
+    color: #fafafa;
+    font-weight: 400;
+}
+.logo1:before{
+    content: url('artist-profile.png'); 
+}
+#navigation ul{
+    list-style: none;
+    width: 80%;
+}
+#navigation ul li a .btn{
+    background: none;
+    border: none;
+    padding: 5px;
+    text-align: center;
+    margin: 20px;
+    height: 40px;
+    width: 100%;
+    box-shadow: 0 0 10px #fafafa;
+    border-radius: 20px;
+    text-align: center;
+    color: #fafafa;
+    font-size: 1.5em;
+    transition: 0.1s;
+}
+#navigation ul li a{
+    text-decoration: none;
+    text-align: center;
+}
+#navigation ul li a .btn:hover{
+    box-shadow: inset 0 0 100px #fafafa;
+    color: #313743;
+    transition: 0.1s;
+}
+@media (max-width: 767px){
+    header {
+        padding: 15px;
+    }
+    header .logo{
+        font-size: 1em;
+    }
+    .texts {
+        top: 75%;
+    }
+    .texts h1 {
+        font-size: 1.3em;
+    }
+    .texts button {
+        font-size: 1.2em;
+        width: 240px;
+        height: 50px;
+    }
+    .screen.on {
+        transform: translateX(-300px);
+    }
+    .screen.on .texts {
+        left: -100%;
+    }
+    #navigation.on {
+        right: -100px;
+    }
+    .logo1 {
+    font-size: 1.2em;
+    margin-left: -100px;
+    }
+    #navigation ul li a .btn {
+        padding: 5px;
+        margin: 15px 20px;
+        height: 30px;
+        width: 65%;
+        font-size: 1em;
+    }
+    #navigation p{
+        margin-left: -70px;
+    }
+}
